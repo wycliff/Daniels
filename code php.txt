@@ -1,0 +1,45 @@
+<?php
+$server = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mydb";
+
+//creating a connection
+
+$conn = mysqli_connect($server, $username, $password, $dbname);
+
+//check connection
+
+if(!$conn) {
+	die("Connection failed" . mysqli_connect_error());
+	
+}
+//get values from form
+
+if(isset($_POST["submit"])){
+
+$fname=$_POST["fname"];
+$lname=$_POST["lname"];
+$dateOB=$_POST["dateOB"];
+$email=$_POST["email"];
+$county=$_POST["county"];
+
+
+
+
+
+}
+  //insert data into database
+  
+$sql="INSERT INTO reg(fname,lname,dateOB,email,county)VALUES("$fname","$lname","$dateOB","$email","$county")";
+
+if(mysqli_query($conn,$sql)) {
+	echo "New user added !";
+} else {
+	echo "Error:" .$sql ."</br>".mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>
+</body>
+</html>

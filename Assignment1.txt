@@ -1,0 +1,120 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package shape;
+
+/**
+ *
+ 
+ */
+public abstract class Shape {
+    
+/**
+     */
+    
+    public  void describe(){};
+    
+         
+}
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package shape;
+
+/**
+ *
+
+ */
+public class Point extends Shape {
+    private int x,y;
+    
+//    public Point(){
+//      this.x=x;
+//      this.y=y;
+//    }
+    
+    public void describe(int x, int y){
+        x=5;
+        y=6;
+       System.out.println(x);
+       System.out.println(y);
+        
+        
+       
+    }
+
+    @Override
+    public void describe() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+}
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package shape;
+
+/**
+ *
+ 
+ */
+public class Circle extends Shape {
+    
+    private final double r;
+    public Circle(int x,int y,final double r){
+    //this(1);
+        this.r=r;
+    }
+    public void describe(int x,int y,double r) {
+        System.out.println(x);
+        System.out.println(y);   
+        System.out.println(r);
+
+    }
+
+    @Override
+    public void describe() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+}
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package shape;
+
+/**
+ *
+ 
+ */
+public class ShapeTester {
+    public  static void main(String[] args){
+    
+    Point p1=new Point();
+//        int x=4;
+//        int y=5;
+     System.out.println("Point coordinates:");
+//    System.out.println(x);
+//    System.out.println(y);
+        p1.describe(3,4);
+
+    Circle c1= new Circle(6,3,4);
+   // int r=4;
+   System.out.println("Circle dimensions are:");
+//    System.out.println(x);
+//    System.out.println(y);   
+//    System.out.println(r);
+    c1.describe(3,4,6);
+   // c1.describe();
+    }
+}
+
